@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Graphical explorer - basic</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="../templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/nivo-slider.css" type="text/css" media="screen" />	
+<link rel="stylesheet" type="text/css" href="../css/ddsmoothmenu.css" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/ddsmoothmenu.js">
+/***********************************************
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+</script>
+
+<script language="javascript" type="text/javascript">
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+
+<link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" /> 
+<script type="text/JavaScript" src="js/slimbox2.js"></script> 
+</head>
+
+<body>
+<div id="templatemo_wrapper">
+	<div id="templatemo_header">
+    	<div id="site_title"><a href="#">AusPass</a></div>
+    	<div id="templatemo_search">
+            <form action="#" method="get">
+              <input type="text" value="Search..." name="keyword" id="keyword" title="keyword" 
+              				onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            </form>
+        </div>
+    </div><!-- END of templatemo_header -->
+    <div id="templatemo_menu" class="ddsmoothmenu">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../data.html"> Data</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../education.html">Education</a></li>
+			<li><a href="../resources.html">Resources</a></li>
+			<li><a href="../about.html" >About us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <br style="clear: left" />
+    </div> <!-- end of templatemo_menu -->
+    
+    <div id="templatemo_main">
+		<h2> How to download AusPass data for a selection of seismic stations</h2>
+		 The AusPass data portal allows you to download data for a selection of stations and events. The simplest way to download data is through station selection. 
+		<ul class="list_bullet" >
+                <li class="flow"> Step 1: To start the station selection, click on the "Explore Stations" tab.</li>
+				<li class="flow"> Step 2: In the "Stations controls" panel on the left of the screen, select the array of your choice using the "Network Code" dropdown menu. </li>
+			    <li class="flow"> Step 3: Click on "Search" at the bottom of the page. </li>
+         </ul>
+		<img src="../images/help/screenshot_1.jpg" alt="First screen shot for station selection" style="width:684px;height:553px;" />
+				<ul class="list_bullet" >
+			    <li class="flow"> Step 4: Select the stations of your choice in the "Event and Station list" at the bottom of the screen. The station(s) selected appear(s) in a darker color on the map. Information about each station can be obtained by clicking on the map. Stations can also be selected/unselected when clicking on them on the map. </li>
+         </ul>
+		<img src="../images/help/screenshot_2.jpg" alt="First screen shot for station selection" style="width:703px;height:582px;" />
+				<ul class="list_bullet" >
+			    <li class="flow"> Step 5: Click on the "Submit request" tab at the top of the page. </li>
+				<li class="flow"> Step 6: Enter the period during which you want to select the data. The period selected should be part of the array lifetime, given on the array webpage. Links to array webpages are provided on the AusPass homepage, and follow the url format: "http://auspass.edu.au/networks/<b><i>arrayname</i></b>.html" </li>
+				<li class="flow"> Step 7: Select the type of seismic data (waveform or metadata) you want. </li>
+				<li class="flow"> Step 8: Indicate your email address. </li>
+				<li class="flow"> Step 9: Click on "Submit" at the bottom of the page. </li>
+         </ul>
+		<img src="../images/help/screenshot_3.jpg" alt="First screen shot for station selection" style="width:705px;height:547px;" />
+						<ul class="list_bullet" >
+			    <li class="flow"> Step 10: Click on the "Download data" tab at the top of the page. </li>
+				<li class="flow"> Step 11: Click on "Start". </li>
+				<li class="flow"> Step 12: Click on "Save". </li>
+         </ul>
+				<img src="../images/help/screenshot_4.jpg" alt="First screen shot for station selection" style="width:684px;height:436px;" />
+		<div style="clear: both;"></div>
+		<b>Congratulations, your download is complete!</b>
+
+    </div><!-- END of templatemo_bottom -->
+	
+</div><!-- END of templatemo_bottom_wrapper --> 
+	
+   
+<div id="templatemo_bottom_wrapper">
+	<div id="templatemo_bottom"> 	
+		<p align="left" >Our sponsors:</p>
+		<img src="../images/logos/ANU_and_AusPass_logos_v5.png">	 	
+    </div><!-- END of templatemo_bottom -->
+</div><!-- END of templatemo_bottom_wrapper -->  		
+	
+		
+<div id="templatemo_footer_wrapper">    
+    <div id="templatemo_footer">
+   	  <p align="center">Copyright © 2018 <a href="#">AusPass</a></p>
+  </div><!-- END of templatemo_footer -->
+</div><!-- END of templatemo_footer_wrapper -->
+
+</body>
+</html>

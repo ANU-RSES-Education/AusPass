@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Graphical explorer: advanced tutorial</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="../templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/nivo-slider.css" type="text/css" media="screen" />	
+<link rel="stylesheet" type="text/css" href="../css/ddsmoothmenu.css" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/ddsmoothmenu.js">
+/***********************************************
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+</script>
+
+<script language="javascript" type="text/javascript">
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+
+<link rel="stylesheet" href="../help/css/slimbox2.css" type="text/css" media="screen" /> 
+<script type="text/JavaScript" src="../help/js/slimbox2.js"></script> 
+</head>
+
+<body>
+<div id="templatemo_wrapper">
+	<div id="templatemo_header">
+    	<div id="site_title"><a href="#">AusPass</a></div>
+    	<!--<div id="templatemo_search">
+            <form action="#" method="get">
+              <input type="text" value="Search..." name="keyword" id="keyword" title="keyword" 
+              				onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            </form>
+        </div>-->
+    </div><!-- END of templatemo_header -->
+    <div id="templatemo_menu" class="ddsmoothmenu">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../data.html"> Data</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../education.html">Education</a></li>
+			<li><a href="../resources.html">Resources</a></li>
+			<li><a href="../about.html" >About us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+			<li><a href="../help.html">Help</a></li>
+        </ul>
+        <br style="clear: left" />
+    </div> <!-- end of templatemo_menu -->
+    
+    <div id="templatemo_main">
+		<h2> About AusPass metadata</h2>
+		 AusPass provides download exhaustive metadata about the seismic datasets (one per array) in AusPass, that can be downloaded with the <a href="../data.html#data_frame">WebDC3 graphical explorer</a> (instructions <a href="#WebDC3_metadata_search">below</a>) or with a <a href="http://auspass.edu.au/help/FDSN_request.html">standard FDSN request</a> using the <a href="https://www.fdsn.org/webservices/FDSN-WS-Specifications-1.1.pdf#page=10">station</a> service. AusPass metadata follow the <a href="https://www.fdsn.org/xml/station/">FDSN stationXML</a> schema version 1.0. AusPass metadata can also be downloaded as a text file with less details (instrumental responses not included). According to the FDSN stationXML schema, the metadata is organized in 5 levels, imbricated one in another as russian dolls : 
+	  <ol><li>the <b>inventory</b> is the higher level of information, which contains all sublevels, </li>
+			<li>the <b>network</b> level lists the seismic arrays available in the inventory; it also contains the references and dois needed to acknowledge each dataset,</li>
+			<li>the <b>station</b> level gives information about the stations present in an array, including their name and geographical coordinates, </li>
+			<li>the <b>channel</b> level gives information about the instrumentation used and the time-period of the measurements, </li>
+			<li>the <b>instrument response</b>  allows to convert the numerical data into a geophysical signal, such as a displacement, a velocity or an acceleration.</li></ol>  
+	  <p style="text-align:center;"><b>Figure 1 : Organisation of the AusPass metadata according to the FDSN stationXML schema</b></p>
+		
+	  <img src="../images/help/stationXML.png" alt="Organisation of the AusPass metadata according to the FDSN stationXML schema" style="width:900px;height:445px;" />
+		<div class="clear h40"></div>
+		<h3 id="WebDC3_metadata_search"> How to download AusPass metadata with the WebDC3 graphical explorer</h3>
+		<ul class="list_bullet" >
+                <li class="flow"> Step 1: To start the metadata selection, go on the <a href="../data.html">AusPass data page</a> and click on the "Explore stations" tab of the <a href="../data.html#data_frame">WebDC3 graphical explorer</a></li>
+				<li class="flow"> Step 2: In the "Stations controls" panel on the left of the screen, select the network(s) of your choice using the "Network Code" dropdown menu. </li>
+			    <li class="flow"> Step 3: Click "Search" at the bottom of the page.</li>
+			    <li class="flow"> Step 4: Check your selection of stations in the "Event and station list" dropdown menu. You can select/unselect all stations with a click on the case located at the right of the station list header. You can select/unselect each station with a click on the station symbol on the map, and/or the  case located at the right of the station line in the station list.  </li>
+			    
+         </ul>
+		<img src="../images/help/screenshot_meta1.png" alt="First screen shot for metadata selection" style="width:700px;height:658px;" />
+				<ul class="list_bullet" >
+			    <li class="flow"> Step 5: Click on the "Submit request tab".</li>
+				<li class="flow"> Step 6: In the "Submit" panel on the left of the screen, indicate a time-period that covers your data selection. The lifetime of each array is available in the AusPass metadata archive displayed on our homepage.</li>
+				<li class="flow"> Step 7: In the "Submit" panel on the left of the screen, select a request. We encourage to make FDSNWS request type. Within this category, you can either choos eto download the metadata as station XML (the native format) or as text (instrument responses not included). </li>
+				<li class="flow"> Step 8: In the "Submit" panel on the left of the screen, select the level of information needed: station, channel or response (stationXML only). </li>
+				<li class="flow"> Step 9: In the "Submit" panel on the left of the screen, indicate your email adress. </li>
+				<li class="flow"> Step 10: Click "Submit" at the bottom of the page.</li>
+         </ul>
+		<img src="../images/help/screenshot_meta2.png" alt="second screen shot for metadata selection" style="width:700px;height:661px;" />
+				<ul class="list_bullet" >
+			    <li class="flow"> Step 11: Click on the "Download data" tab at the top of the page. </li>
+				<li class="flow"> Step 12: Click on "Start".</li>
+				<li class="flow"> Step 13: Click on "Save". </li>
+         </ul>
+		<img src="../images/help/screenshot_meta3.png" alt="Third screen shot for station selection" style="width:700px;height:534px;" />
+	<div class="clear"></div>
+		<b>Congratulations, your download is complete!</b>
+
+    </div><!-- END of templatemo_bottom -->
+	
+</div><!-- END of templatemo_bottom_wrapper --> 
+	
+	<div id="templatemo_bottom_wrapper">
+	<div id="templatemo_bottom"> 	
+		<p align="left" >Our sponsors:</p>
+		<img src="../images/logos/ANU_and_AusPass_logos_v5.png">	 	
+    </div><!-- END of templatemo_bottom -->
+</div><!-- END of templatemo_bottom_wrapper -->  	
+	
+		
+<div id="templatemo_footer_wrapper">    
+    <div id="templatemo_footer">
+   	  <p align="center">Copyright © 2018 <a href="#">AusPass</a></p>
+  </div><!-- END of templatemo_footer -->
+</div><!-- END of templatemo_footer_wrapper -->
+
+</body>
+</html>

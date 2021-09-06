@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AusPass homepage</title>
+<meta name="keywords" content="AusPass, seismic data, Australia, earthquake, seismic array, seismology, seismological data, passive seismic data" />
+<meta name="description" content="AusPass offers free access to seismic data acquired in Australia. Visit AusPass to find about earthquakes and discover the Earth structure beneath Australia!" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />	
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js">
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+</script>
+
+<script language="javascript" type="text/javascript">
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+<link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" /> 
+<script type="text/JavaScript" src="js/slimbox2.js"></script> 
+</head>
+<body>
+
+<div id="templatemo_wrapper">
+	<div id="templatemo_header">
+    	<div id="site_title"><a href="#">AusPass</a></div>
+    	<!-- <div id="templatemo_search">
+            <form action="#" method="get">
+              <input type="text" value="Search..." name="keyword" id="keyword" title="keyword" 
+              				onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            </form>
+        </div> -->
+    </div><!-- END of templatemo_header -->
+    <div id="templatemo_menu" class="ddsmoothmenu">
+        <ul>
+            <li><a href="index.html" class="selected">Home</a></li>
+			<li><a href="data.html">Data</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="education.html">Education</a></li>
+			<li><a href="resources.html">Resources</a></li>
+			<li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+			<li><a href="help.html">Help</a></li>
+        </ul>
+        <br style="clear: left" />
+    </div> <!-- end of templatemo_menu -->
+    <div id="templatemo_slider">
+    	 <div class="slider-wrapper theme-orman">
+            <div class="ribbon"></div>
+            <div id="slider" class="nivoSlider">
+            	<img src="images/slider/crew.jpg" alt="Field crew in Oodnadata" title="Field crew at the Eastern station of the Marla - Oodnadata seismic line." />
+                <img src="images/slider/eyecandy.jpg" alt="Seismic tomography" title="Global tomography of the Earth’s mantle (blue: fast wavespeed, orange: slow)" />
+                <img src="images/slider/Bilby.jpg" alt="Bilby under the rainbow" title="Deploying BILBY seismic array under the rainbow." />
+            </div>
+            <div class="nivo-controlNav-bg"></div>
+        </div> 
+		<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+        <script type="text/javascript">
+        $(window).load(function() {
+            $('#slider').nivoSlider({
+				controlNav:true
+			});
+        });
+        </script>
+    </div><!-- END of templatemo_slider -->
+    <div id="templatemo_main">
+    	<br>
+        <h1>Welcome to AusPass: the Australian Passive Seismic Server</h1>
+		<br>
+		<div style="background: #ede8e8;padding: 10px 10px 10px 10px;"> <u><b>Notice</b></u>: The AuSIS (Australian Seismometers in Schools) data are now referenced with the network code S1 and the doi: <a href="https://doi.org/10.7914/SN/S1">10.7914/SN/S1</a>. <br>
+			As part of the Seismographs In Schools project (<a href="https://www.iris.edu/hq/sis">SIS</a>), AuSIS was previously referenced with the network code S. During a transition period, you will continue to be able to access AuSIS data with this code via <a href="https://www.iris.edu">IRIS</a>. We encourage all users to update their settings as soon as possible to allow for this change.
+  <br>
+			More information can be found on <a href="./networks/ausis.html"> our network page</a> and on the <a href="http://ausis.edu.au/">AuSIS website</a>.</div>
+				<div class="clear h40"></div>
+		<div class="half left">
+<a href="../notes.txt">notes, updates, changes, and eratta</a>
+        <img src="images/homepage/AusPass_map.png" alt="AusPass data map" style="width:475px;height:464px;" />
+			<!-- http://rses.anu.edu.au/seismology/index.php?p=Expt/bilby -->
+        <p>AusPass is a service dedicated to the acquisition, management, and distribution of passive seismological data in Australia.
+Extensive fieldwork projects are conducted across the country, organized in seismic arrays (i.e. groups of seismic stations).
+The data from the following arrays, listed in the <a href="#AusPass_MDA">AusPass metadata archive</a>, are now <a href="data.html">available online</a>.</p>
+ 
+        </div>
+        <div class="half right">
+            <ul class="list_bullet">
+                <li class="flow"> <a href="./networks/ausis.html">AUSIS</a>: Nationwide Australian Seismometers in Schools permanent array since 2011</li>
+                <li class="flow"> <a href="./networks/skippy.html">SKIPPY</a>: nationwide array 1993-1996 named after the famous bush <a href="https://en.wikipedia.org/wiki/Skippy_the_Bush_Kangaroo">kangaroo</a>
+                 designed to image the Earth's interior
+                <li class="flow"> <a href="./networks/kimba.html">KIMBA</a>: ongoing  arrays deployed in 1997,1998, and 2019 in the Kimberley Region </li>
+                <li class="flow"> <a href="./networks/eal.html">*EAL</a>: Eastern Australia Linkage arrays (EAL,SEAL,SQEAL,AQ3) as part of the WOMBAT rolling array 2004-2014</li> 
+                <li class="flow"> <a href="./networks/soc.html">SOC</a>: arrays deployed in 2007-2008  in South Australia</li>
+                <li class="flow"> <a href="./networks/bilby.html">BILBY</a>: North-South array 2008-2011 across central Australia</li>
+                <li class="flow"> <a href="./networks/wacraton.html">WA CRATON</a>: arrays deployed in 2000-2001 across West Australian cratons </li>
+                <li class="flow"> <a href="./networks/capral.html">CAPRAL</a>: arrays deployed in 2005-2007 in  Western Australia</li>
+                <li class="flow"> <a href="./networks/gawler.html">GAWLER</a>: arrays deployed in 2008-2009 across the Gawler craton in South Australia</li>
+                <li class="flow"> <a href="./networks/minq.html">MINQ</a>: Mt. Isa Northern Queensland array 2009-2011</li>
+                <li class="flow"> <a href="./networks/bass.html">BASS</a>: arrays deployed in 2011-2013 from Southern Victoria to Northern Tasmania to image the crust and lithosphere beneath the Bass strait</li>
+                <li class="flow"> <a href="./networks/curnamona.html">CURNAMONA</a>: array deployed from April-November 2009 in South Australia across the Curnamona craton and the Adelaide Rift Complex</li>
+                <li class="flow"> <a href="./networks/aqt.html">AQT</a>: large array deployed 2015-2017 in western Queensland</li>
+                <li class="flow"> <a href="./networks/asr.html">ASR</a>: array deployed in 2017-2019 to infill areas of South Australia which have yet to have any seismic imaging done</li>
+                <li class="flow"> <a href="./networks/marla.html">MARLA</a>: high density seismic line deployed in 2018-2019 across central Australia</li>
+                <li class="flow"> <a href="./networks/indonesia.html">INDONESIA</a>: ANU seismic deploys in Indonesia (More coming soon)</li>
+            </ul>
+			<p></p>
+			    <a href="data.html" class="more">Access data</a>
+			<!-- http://rses.anu.edu.au/seismology/Expt/-->
+		</div>
+                
+		 <div class="clear h10"></div>
+		<p> Additional seismic data (black stars) collected in Australia (ALFREX, QUOLL, TIGGER, to name a few) and abroad (Indonesia, OBS) are forthcoming. <b> Our primary goal is the collection, archiving, and quality control of network waveform and metadata, which unfortunately means that sometimes the secondary pages on the website are out of date, so we thank you for your patience. Any feedback (bugs, wishlist, etc) is highly appreciated.</b> </p>	
+		<a href="contact.html" class="more">Contact us</a>
+        <div class="clear h40"></div>
+		
+		<h2>AusPass metadata archive</h2>
+		<p> Our metadata archive provides location, hardware information, AND response information (via FDSN) for all seismic arrays currently distributed by AusPass. Time periods are indicated for each array to facilitate your search of data for a particular event (earthquake, explosion, etc.). If you are already using AusPass, the DOI numbers given here are the appropriate references to cite (one for each array), but if none are available (yet) a reference to our webpage may be apropriate. The links listed here (sometimes!) give a description of each seismic array including a map of stations. Alternatively a upt-to-date Google KML file for all networks can be downloaded <a href="./networks/auspass.kml">HERE</a>. The complete up-to-date AusPass metadata can be accessed with the <a href="./data.html">WebDC3 graphical explorer</a> or with a <a href="http://auspass.edu.au:8080/fdsnws/">standard FDSN request</a>. (visit our <a href="./help/graphical_explorer_metadata.html"><b>metadata help page</b></a>).</p>
+		
+			<div style="overflow-x:auto;">
+<table id="AusPass_MDA">
+<tr><td><b>Code</b></td><td><b>Name</b></td><td><b>Stations</b></td><td><b> Start</b></td><td><b>End</b></td><td><b>Type</b></td><td><b>Access</b></td><td><b>DOI</b></td><td><b>Link</b></td></tr>
+<tr><td>S1</td><td>AUSIS</td><td>49</td><td>2011-09-01</td><td>ongoing</td><td><b>permanent</b></td><td>open</td><td><a href="https://doi.org/10.7914/SN/S1">10.7914/SN/S1</a></td><td><a href="http://auspass.edu.au/networks/ausis.html">Here</a></td></tr>
+
+<tr><td>6K</td><td>AUSARRAY SA</td><td>38</td><td>2020-10-14</td><td>2022-XX-XX</td><td>temporary</td><td>closed</td><td><a href="https://doi.org/10.7914/SN/6K_2020">10.7914/SN/6K_2020</a></td><td><a href="http://auspass.edu.au/networks/6K_ausarraysa.html">TBA</a></td></tr>
+<tr><td>2P</td><td>SWAN</td><td>27</td><td>2020-08-13</td><td>2022-XX-XX</td><td>temporary</td><td>closed</td><td><a href="https://doi.org/10.7914/SN/2P_2020">10.7914/SN/2P_2020</a></td><td><a href="http://auspass.edu.au/networks/2P_swan.html">TBA</a></td></tr>
+<tr><td>3O</td><td>AKIMBA 19</td><td>8</td><td>2019-05-09</td><td>2022-XX-XX</td><td>temporary</td><td>closed</td><td><a href="https://doi.org/10.7914/SN/3O_2019">10.7914/SN/3O_2019</a></td><td><a href="http://auspass.edu.au/networks/3O_kimba19.html">TBA</a></td></tr>
+<tr><td>5G</td><td>LAKE EYRE BASIN</td><td>40</td><td>2018-10-16</td><td>2022-XX-XX</td><td>temporary</td><td>closed</td><td><a href="https://doi.org/10.7914/SN/5G_2018">10.7914/SN/5G_2018</a></td><td><a href="http://auspass.edu.au/networks/5G_lakeeyre.html">TBA</a></td></tr>	
+
+<tr><td>3G</td><td>MARLA LINE</td><td>66</td><td>2018-04-21</td><td>2019-08-04</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/3G_2018">10.7914/SN/3G_2018</a></td><td><a href="http://auspass.edu.au/networks/marla.html">Here</a></td></tr>
+<tr><td>5J</td><td>ASR</td><td>12</td><td>2017-04-23</td><td>2019-02-28</td><td>temporary</td><td>open</td><td><a href="https://doi.org/TBA">TBA</a></td><td><a href="http://auspass.edu.au/networks/asr.html">Here</a></td></tr>
+<tr><td>YS</td><td>BANDA</td><td>11</td><td>2016-11-21</td><td>2019-08-20</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/YS_2014">10.7914/SN/YS_2014</a></td><td><a href="http://auspass.edu.au/networks/indonesia.html">Here</a></td></tr>
+<tr><td>1Q</td><td>AQT</td><td>87</td><td>2015-11-28</td><td>2017-10-24</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/1Q_2016">10.7914/SN/1Q_2016</a></td><td><a href="http://auspass.edu.au/networks/aqt.html">Here</a></td></tr>
+<tr><td>6C</td><td>WA SPIRAL</td><td>16</td><td>2015-02-15</td><td>2016-01-03</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/6C_2015">10.7914/SN/6C_2015</a></td><td><a href="http://auspass.edu.au/networks/6C_waspa.html">Here</a></td></tr>
+<tr><td>8K</td><td>COPA-HPS</td><td>29</td><td>2014-10-12</td><td>2015-10-16</td><td>temporary</td><td>open</td><td><a href="https://doi.org/TBA">TBA</a></td><td><a href="http://auspass.edu.au/networks/8K_copahps.html">Here</a></td></tr>
+<tr><td>4J</td><td>AQ3</td><td>52</td><td>2014-05-20</td><td>2016-02-09</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/4J_2014">10.7914/SN/4J_2014</a></td><td><a href="http://auspass.edu.au/networks/aq3.html">Here</a></td></tr>
+<tr><td>7M</td><td>COPA</td><td>80</td><td>2014-02-24</td><td>2018-09-04</td><td>temporary</td><td>open</td><td><a href="https://doi.org/TBA">TBA</a></td><td><a href="http://auspass.edu.au/networks/7M_copa.html">Here</a></td></tr>
+<tr><td>1E</td><td>SQLD SPIRAL</td><td>16</td><td>2013-11-12</td><td>2014-11-13</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/1E_2013">10.7914/SN/1E_2013</a></td><td><a href="http://auspass.edu.au/networks/1E_sqldspa.html">Here</a></td></tr>
+<tr><td>1K</td><td>ALFREX</td><td>70</td><td>2013-11-06</td><td>2015-09-14</td><td>temporary</td><td>closed</td><td><a href="https://doi.org/TBA">TBA</a></td><td><a href="http://auspass.edu.au/networks/1K_alfrex.html">Here</a></td></tr>
+<tr><td>XU</td><td>JAKARTA EXP</td><td>218</td><td>2013-10-08</td><td>2016-05-13</td><td>temporary</td><td>TBA</td><td><a href="https://doi.org/TBA">TBA</a></td><td><a href="http://auspass.edu.au/networks/XU_jakarta.html">Here</a></td></tr>
+<tr><td>8J</td><td>SQEAL</td><td>98</td><td>2012-11-19</td><td>2014-10-12</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/8J_2012">10.7914/SN/8J_2012</a></td><td><a href="http://auspass.edu.au/networks/eal.html">Here</a></td></tr>
+<tr><td>1P</td><td>BASS</td><td>24</td><td>2011-05-22</td><td>2012-12-31</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/1P_2011">10.7914/SN/1P_2011</a></td><td><a href="http://auspass.edu.au/networks/bass.html">Here</a></td></tr>
+<tr><td>7L</td><td>EAL3</td><td>44</td><td>2011-11-09</td><td>2013-07-07</td><td>temporary</td><td>open</td><td><a href="https://doi.org/TBA">TBA</a></td><td><a href="http://auspass.edu.au/networks/eal.html">Here</a></td></tr>
+<tr><td>1H</td><td>EAL2</td><td>52</td><td>2010-05-10</td><td>2011-03-22</td><td>temporary</td><td>open</td><td><a href="https://doi.org/TBA">TBA</a></td><td><a href="http://auspass.edu.au/networks/eal.html">Here</a></td></tr>
+<tr><td>YJ</td><td>EAL1</td><td>44</td><td>2009-06-02</td><td>2010-02-26</td><td>temporary</td><td>open</td><td><a href="https://doi.org/TBA">TBA</a></td><td><a href="http://auspass.edu.au/networks/eal.html">Here</a></td></tr>
+<tr><td>ZR</td><td>MINQ</td><td>53</td><td>2009-06-16</td><td>2011-04-01</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/ZR_2009">10.7914/SN/ZR_2009</a></td><td><a href="http://auspass.edu.au/networks/minq.html">Here</a></td></tr>
+<tr><td>1F</td><td>CURNAMONA</td><td>34</td><td>2009-03-24</td><td>2009-11-05</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/1F_2009">10.7914/SN/1F_2009</a></td><td><a href="http://auspass.edu.au/networks/curnamona.html">Here</a></td></tr>
+<tr><td>6F</td><td>BILBY </td><td>25</td><td>2008-08-27</td><td>2011-05-24</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/6F_2008">10.7914/SN/6F_2008</a></td><td><a href="http://auspass.edu.au/networks/bilby.html">Here</a></td></tr>
+<tr><td>1G</td><td>GAWLER</td><td>35</td><td>2008-07-01</td><td>2009-04-03</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/1G_2008">10.7914/SN/1G_2008</a></td><td><a href="http://auspass.edu.au/networks/gawler.html">Here</a></td></tr>
+<tr><td>7K</td><td>SOC</td><td>21</td><td>2007-02-14</td><td>2008-08-14</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/7K_2007">10.7914/SN/7K_2007</a></td><td><a href="http://auspass.edu.au/networks/soc.html">Here</a></td></tr>
+<tr><td>7J</td><td>CAPRAL</td><td>25</td><td>2005-10-20</td><td>2007-05-30</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/7J_2005">10.7914/SN/7J_2005</a></td><td><a href="http://auspass.edu.au/networks/capral.html">Here</a></td></tr>
+<tr><td>7U</td><td>SEAL3</td><td>57</td><td>2007-11-14</td><td>2009-02-14</td><td>temporary</td><td>open</td><td><a href="https://doi.org/">TBA</a></td><td><a href="http://auspass.edu.au/networks/eal.html">Here</a></td></tr>
+<tr><td>7T</td><td>SEAL2</td><td>31</td><td>2007-02-11</td><td>2007-11-19</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/7T_2007">10.7914/SN/7T_2007</a></td><td><a href="http://auspass.edu.au/networks/eal.html">Here</a></td></tr>
+<tr><td>7S</td><td>SETA</td><td>41</td><td>2006-10-02</td><td>2007-08-26</td><td>temporary</td><td>open</td><td><a href="https://doi.org/">TBA</a></td><td><a href="http://auspass.edu.au/networks/7S_seta.html">Here</a></td></tr>
+<tr><td>7Q</td><td>SEAL</td><td>20</td><td>2004-11-03</td><td>2005-04-09</td><td>temporary</td><td>open</td><td><a href="https://doi.org/">TBA</a></td><td><a href="http://auspass.edu.au/networks/eal.html">Here</a></td></tr>
+<tr><td>7I</td><td>TASMAL</td><td>24</td><td>2003-05-01</td><td>2005-11-17</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/7I_2003">10.7914/SN/7I_2003</a></td><td><a href="http://auspass.edu.au/networks/7I_tasmal.html">Here</a></td></tr>
+<tr><td>7G</td><td>WA CRATON</td><td>25</td><td>2000-07-11</td><td>2001-07-13</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/7G_2000">10.7914/SN/7G_2000</a></td><td><a href="http://auspass.edu.au/networks/wacraton.html">Here</a></td></tr>
+<tr><td>7P</td><td>TIGGER SP</td><td>XX</td><td>2002-XX-XX</td><td>2002-XX-XX</td><td>temporary</td><td>TBA</td><td><a href="https://doi.org/TBA">TBA</a></td><td><a href="http://auspass.edu.au/networks/tigger.html">Here</a></td></tr>
+<tr><td>7H</td><td>TIGGER</td><td>XX</td><td>2001-XX-XX</td><td>2002-XX-XX</td><td>temporary</td><td>TBA</td><td><a href="https://doi.org/TBA">TBA</a></td><td><a href="http://auspass.edu.au/networks/tigger.html">Here</a></td></tr>
+<tr><td>7E</td><td>KIMBA98</td><td>6</td><td>1998-05-22</td><td>1998-07-25</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/7E_1998">10.7914/SN/7E_1998</a></td><td><a href="http://auspass.edu.au/networks/kimba.html">Here</a></td></tr>
+<tr><td>7D</td><td>KIMBA97</td><td>7</td><td>1997-07-21</td><td>1997-10-14</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/7D_1997">10.7914/SN/7D_1997</a></td><td><a href="http://auspass.edu.au/networks/kimba.html">Here</a></td></tr>
+<tr><td>7B</td><td>SKIPPY</td><td>37</td><td>1993-05-03</td><td>1995-08-10</td><td>temporary</td><td>open</td><td><a href="https://doi.org/10.7914/SN/7B_1993">10.7914/SN/7B_1993</a></td><td><a href="http://auspass.edu.au/networks/skippy.html">Here</a></td></tr>
+</table>
+		</div>
+        <div class="clear h40"></div>
+
+        <h2>Browse our networks in Google Earth</h2>
+	<a href="./networks/auspass.kml">KML File Download (updated nightly)</a>
+	<a href="./networks/auspass.kml"><img src="./networks/googlemaps.png" align="center", width="100%"></a>
+	<div class="clear h40"></div>
+        <h2>Historical Australian Earthquakes</h2>
+		<div class="half right">
+		<img src="images/homepage/Australian_earthquakes.png" alt="Earthquakes in Australia" style="width:450px;height:350px;" />
+		</div>
+			<div class="half left">
+        	<p><br>Although Australia is not on a plate boundary, earthquakes occur due to sresses built up from the motions of tectonic plates around Australia. On average, there are about 80 earthquakes a year in Australia with a magnitude greater than or eqaul to 3. The plot on the right shows earthquakes bigger than magnitude 3 occuring in Australia since 1955. Historically, the largest Australian earthquakes were recorded at:</p> 
+            <ul class="list_bullet">
+                <li class="flow"> Tennant Creek, NT (Magnitude 6.6, 6.3 and 6.2) : 1988 </li>
+                <li class="flow"> Meckering, WA (Magnitude 6.5) : 1968 </li>
+                <li class="flow"> Simpson Desert, NT (Magnitude 6.4): 1941 </li>
+                <li class="flow"> Meeberrie, WA (Magnitude 6.3) : 1941 </li>
+				<li class="flow"> Collier Bay, WA (Magnitude 6.3) : 1997 </li>
+				<li class="flow"> Cadoux, WA (Magnitude 6.1) : 1979 </li>
+				<li class="flow"> Petermann Ranges, NT (Magnitude 6.1) : 2016 </li>
+				<li class="flow"> West of Lake Mackay, WA (Magnitude 6) : 1970 </li>
+				<!-- http://www.australiangeographic.com.au/topics/science-environment/2012/07/australias-worst-earthquakes/ and http://ausis.edu.au/significant-->
+            </ul>
+        </div>  
+
+        <div class="clear"></div>
+        
+    </div><!-- END of templatemo_main -->
+</div><!-- END of templatemo_wrapper -->
+   
+<div id="templatemo_bottom_wrapper">
+	<div id="templatemo_bottom"> 	
+		<p align="left" >Our sponsors:</p>
+		<img src="images/logos/ANU_and_AusPass_logos_v5.png" alt="Auscope and ANU logos">	 	
+    </div><!-- END of templatemo_bottom -->
+</div><!-- END of templatemo_bottom_wrapper -->  	
+	
+ 	
+	
+		
+<div id="templatemo_footer_wrapper">    
+    <div id="templatemo_footer">
+   	  <p align="center">Copyright © 2018 <a href="#">AusPass</a></p>
+  </div><!-- END of templatemo_footer -->
+</div><!-- END of templatemo_footer_wrapper -->
+
+</body>
+</html>

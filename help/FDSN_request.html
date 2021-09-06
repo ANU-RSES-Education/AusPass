@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FDSN request</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="../templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/nivo-slider.css" type="text/css" media="screen" />	
+<link rel="stylesheet" type="text/css" href="../css/ddsmoothmenu.css" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/ddsmoothmenu.js">
+/***********************************************
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+</script>
+
+<script language="javascript" type="text/javascript">
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+
+<link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" /> 
+<script type="text/JavaScript" src="js/slimbox2.js"></script> 
+</head>
+
+<body>
+<div id="templatemo_wrapper">
+	<div id="templatemo_header">
+    	<div id="site_title"><a href="#">AusPass</a></div>
+    	<!--<div id="templatemo_search">
+            <form action="#" method="get">
+              <input type="text" value="Search..." name="keyword" id="keyword" title="keyword" 
+              				onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            </form>
+        </div>-->
+    </div><!-- END of templatemo_header -->
+    <div id="templatemo_menu" class="ddsmoothmenu">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../data.html"> Data</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../education.html">Education</a></li>
+			<li><a href="../resources.html">Resources</a></li>
+			<li><a href="../about.html" >About us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+			<li><a href="../help.html">Help</a></li>
+        </ul>
+        <br style="clear: left" />
+    </div> <!-- end of templatemo_menu -->
+    
+    <div id="templatemo_main">
+		<div class="clear h40"></div>
+		<h1> FDSN webservices </h1>
+		<div class="clear h40"></div>
+		
+		The International Federation of Digital Seismograph Networks (<a href="http://www.fdsn.org/">FDSN</a>) has defined web services for accessing waveform, station and event information.  The <a href="http://www.fdsn.org/webservices/">FDSN specification</a> defines THE defacto international standard allowing users to retrieve waveform data, response data, and station metadata through HTTP in a universally consistent format and language. AusPass is one of many data centres adopting FDSN webservices, with other notable examples being <a href="https://service.iris.edu/fdsnws/">IRIS (USA)</a>, <a href="http://service.scedc.caltech.edu/fdsnws/dataselect/1/">SCEDC (USA)</a>, <a href="http://www.isc.ac.uk/fdsnws/event/1/">ISC (UK)</a>, <a href="http://www.orfeus-eu.org/fdsnws/">Orfeus (Europe)</a>, <a href="http://geofon.gfz-potsdam.de/fdsnws/">GEOFON (Germany)</a>, and <a href="https://www.geonet.org.nz/data/tools/FDSN">Geonet (New Zealand)</a>, as well as many <a href="https://www.fdsn.org/webservices/datacenters/">others</a>. Other national networks not on that list, such as Geoscience Australia (GA), offload their data to IRIS for them to host.			
+		</p>
+		<div class="clear h40"></div>
+		<h2> How to access AusPass data </h2>
+		<br>
+		<p> AusPass uses this address to support our FDSN archive service implementation: <a href="http://auspass.edu.au:8080"><largefont><b>http://auspass.edu.au:8080</b></largefont></a> (or just :80 works too). If you are accessing via ObsPy, or any other software that interfaces with FDSN, that's the only address you'll have to enter and you'll be good to go.<br><br>
+			From that address we provide following FDSN webservices:
+		<ul class="list_bullet">
+			<li class="flow"><a href="http://auspass.edu.au:8080/fdsnws/station/1/"><b>Station</b></a>: station metadata (including response) in ascii text or FDSN StationXML format</li>
+			<li class="flow"><a href="http://auspass.edu.au:8080/fdsnws/dataselect/1/"><b>Data Select</b></a>: time series data (i.e. waveforms) in miniSEED format</li>
+			<li class="flow"><a href="http://auspass.edu.au:8080/fdsnws/availability/1/"><b>Availability</b></a>: detailed time span information about existing waveform data</li>
+
+			
+			<li class="flow">We do <b>NOT</b> offer <a href="https://www.fdsn.org/webservices/FDSN-WS-Specifications-1.1.pdf#page=14"><b>Event</b></a> information (yet!). However most of the FDSN servers listed above do, and all provide earthquake information for most medium to large sized events globally. The <a href="https://earthquake.usgs.gov/">USGS</a> event server is typically pretty good.</li>
+		</ul>
+			Fundamentally, one can access all these services (except Event) by simply building a URL query that can be inserted into your web browser's address bar, with examples below. It's that easy! The links above provide convenience URL builders as well. More complicated and/or repeated requests can be easily scripted with utilities such as wget or curl, or preferrably via a client tool which is written expliclity with this task in mind (see our <a href="./obspy_request.html"><largefont><b>ObsPy tutorial</b></largefont></a>).<br><br></p>
+		<h2> Example </h2>
+		<p>This example shows how to download the waveform data (in miniSEED format) recorded after the Samoa earthquake (29 September 2009 at 17h48) at BILBY stations in central Australia. In your browser, type: <br><br>
+		   <span style="background-color: #ede8e8"><largefont>http://auspass.edu.au:80/fdsnws/dataselect/1/query?net=6F&amp;sta=*&amp;cha=BHZ&amp;start=2009-09-29T17:50:00&amp;end=2009-09-29T18:50:00</largefont></span><br><br></p>
+			<table id="FDSN_table">
+			<thead><tr><th>Element of the data request </th><th>Meaning</th></tr></thead>
+			<tbody><tr><td><a href="http://auspass.edu.au:8080">http://auspass.edu.au:8080/</a></td><td> Server name (AusPass website serving data on port 80/8080)</td></tr>
+				   <tr><td>fdsnws/</td><td>FSDN Web Services on that server</td></tr>
+				   <tr><td>dataselect
+					   /1/</td><td>Data retrieval services (use "station/1/" to retrieve station metadata and "event/1/" for event metadata)</td></tr>
+				   <tr><td>query</td><td>A query!</td></tr>
+				   <tr><td>?</td><td> Marks the end of the website adress serving the data</td></tr>
+				   <tr><td>&amp;</td><td>Separates the arguments to select AusPass data</td></tr>
+				   <tr><td>net=6F</td><td> Seismic network "6F" (BILBY)</td></tr>
+				   <tr><td>sta=*</td><td> Select all stations in BILBY array, central Australia</td></tr>
+				   <tr><td>cha=BHZ</td><td>Vertical broadband channel (also available: BHN and BHE, all broadband channels can be selected with cha=BH?)</td></tr>
+				   <tr><td>start=2009-09-29T17:50:00.000</td><td>Data start time using <a href=" https://en.wikipedia.org/wiki/ISO_8601">ISO </a> standard date and time format</td></tr>
+			       <tr><td>end=2009-09-29T18:50:00.000</td><td>Data end time using <a href=" https://en.wikipedia.org/wiki/ISO_8601">ISO </a> standard date and time format</td></tr>
+			</tbody>
+			</table>
+		<p><br>
+		Also need station metadata and response? Build a <a href="http://auspass.edu.au:8080/fdsnws/station/1/">station query</a> in the same way: <br>
+		<span style="background-color: #ede8e8"><largefont>http://auspass.edu.au:8080/fdsnws/station/1/query?network=6F&level=response&nodata=404</largefont></span><br></p>
+		Note that we've set "level" to "response" in order to include both station positions AND response information, for all sites in network 6F.<br><br>
+		Another example... lets look at ALL the stations we have online, and have it presented in simple text!<br>
+ 		<span style="background-color: #ede8e8"><largefont>http://auspass.edu.au:8080/fdsnws/station/1/query?network=*&level=channel&format=text&nodata=404</largefont></span><br></p>
+		Note that we've now set the level to "channel" and format to "text". Channel provides a bit more information regarding equipment and individual channel info etc. The simplest level is "station" which is more fundamental. Try both out (e.g. change to: level=station) and see the difference yourself. <br><br>
+
+		Wildcards can generally be used as well. Clobber * can be used to substitute any amount of characters, a question mark ? for a single character.
+
+			<ul class="list_bullet">
+			<li class="flow">Simple requests, like the one given in the example above, can be handled manually through your browser. More examples, showing how to request station metadata or information about seismic events, are available on <a href="http://www.fdsn.org/webservices/">http://www.fdsn.org/webservices/</a>.</li>
+			<li class="flow"> Automated or more complex requests can be achieved using command-line programs such as <a href="https://www.gnu.org/software/wget/">wget</a> or <a href="https://curl.haxx.se/">curl</a> available under most operating systems. </li>
+	        <li class="flow"> Application Programming Interfaces (API) are available for programming languages such as Python, Java, or Matlab programs. APIs allow requesting data directly from your codes, handling data as high-level objects. In another <a href="./obspy_request.html">tutorial</a>, we show how to access, process and visualize AusPass data with <a href="https://www.obspy.org/">ObsPy</a> (Python). This is so cool that you can download, process and plot the data requested in the above example in about two minutes (see <a href="./script0.py">script </a>and <a href="./samoa.png">figure</a>)!</li>
+			</ul>
+	    <br></p>
+		<h2>Recommendations</h2>
+		<p><br>The AusPass team does its best to maintain fast and efficient webservices. <br><br>
+		   However, <b>it is recommended not to request too much data in a single request</b>. The larger the request, the longer it takes to complete. If a large request fails, it will have to be resubmitted. You can break a large request into smaller ones. Then, if a failure occurs, you will just have to resubmit the small request. Webservice connections can break if no data is transmitted after 5-10 minutes. Therefore, do not rely on requests that could take more than 5-10 minutes to begin returning data.<br><br>
+		   On the other hand, for performance reasons, <b> do not to make lots of very small data requests</b>. Be aware that every time a request is made, a new connection is established and the associated processing overhead will slow the response.<br><br>
+		  <b>Best practice is to group requests by time period </b>(one request for several stations, but one time period - see above example) or <b>station</b> (one request for several time periods, but one station).</p>
+
+		<!-- This specification serves as a baseline level of compatibility allowing data request tools to work with any FDSN data center implementing these services.
+		 
+		 The International Federation of Digital Seismograph Networks (<a href="http://www.fdsn.org/">FDSN</a>) has defined web services for accessing waveform, station and event information. <br><br>
+		
+		 The <a href="http://www.fdsn.org/webservices/">FDSN specification</a> defines a standard format to request seismic data. This specification serves as a baseline level of compatibility allowing data request tools to work with any FDSN data center implementing these services. Therefore, all data centres adopting FDSN standards are able to offer their data in a consistent way. All programs requesting IRIS data through the FDSN interface can therefore also be used to access AusPass data, and vice versa.<br> <br>
+		
+		 There is several ways to access AusPass data through FDSN standards. You will need a client to access web servers that implement the <a href="http://www.fdsn.org/webservices/">FDSN web service definitions</a>. Once the connection to AusPass has been made with the client name <b>"http://auspass.edu.au:8080"</b>, all functions   can be used to download metadata  and seismic data .<br><br> -->
+		
+
+
+</div><!-- END of templatemo_bottom -->
+	
+</div><!-- END of templatemo_bottom_wrapper --> 
+	
+   
+<div id="templatemo_bottom_wrapper">
+	<div id="templatemo_bottom"> 	
+		<p align="left" >Our sponsors:</p>
+		<img alt="AuScope and ANU logos" src="../images/logos/ANU_and_AusPass_logos_v5.png">	 	
+    </div><!-- END of templatemo_bottom -->
+</div><!-- END of templatemo_bottom_wrapper -->  	
+	
+	
+		
+<div id="templatemo_footer_wrapper">    
+    <div id="templatemo_footer">
+   	  <p align="center">Copyright © 2018 <a href="#">AusPass</a></p>
+  </div><!-- END of templatemo_footer -->
+</div><!-- END of templatemo_footer_wrapper -->
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AusPass Data</title>
+<meta name="keywords" content="AusPass, seismic data, Australia, earthquake, seismic array, seismology, seismological data, passive seismic data" />
+<meta name="description" content="AusPass offers free access to seismic data acquired in Australia. Visit AusPass to find about earthquakes and discover the Earth structure beneath Australia!" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />	
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js">
+
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+</script>
+
+<script language="javascript" type="text/javascript">
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+
+<link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" /> 
+<script type="text/JavaScript" src="js/slimbox2.js"></script> 
+<!--  t e m p l a t e m o  372  t i t a n i u m  -->
+</head>
+<body>
+
+<div id="templatemo_wrapper">
+	<div id="templatemo_header">
+    	<div id="site_title"><a href="#">AusPass</a></div>
+ <!--   	<div id="templatemo_search">
+            <form action="#" method="get">
+              <input type="text" value="Search..." name="keyword" id="keyword" title="keyword" 
+              				onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            </form>
+        </div> -->
+    </div><!-- END of templatemo_header -->
+    <div id="templatemo_menu" class="ddsmoothmenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="data.html" class="selected">Data</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="education.html">Education</a></li>
+			<li><a href="resources.html">Resources</a></li>
+			<li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+			<li><a href="help.html">Help</a></li>
+        </ul>
+        <br style="clear: left" />
+    </div> <!-- end of templatemo_menu -->
+
+    <div id="templatemo_main">
+			
+		<h2> Welcome to the AusPass data portal</h2>
+		<br>
+		<div style="background: #ede8e8;padding: 10px 10px 10px 10px;">
+			<ul class="list_bullet">
+                <li class="flow"> <b> How to get AusPass data: </b> AusPass data can be accessed with the WebDC3 <a href="#data_frame"><largefont><b>graphical explorer</b></largefont></a> (below) or with the (preferred) <a href="./help/FDSN_request.html"><largefont><b>FDSN</b></largefont></a> seismic data standard. SeedLink access (port 18000) is also available, but please note that Arclink is no longer supported.</li>
+		
+				<li class="flow"> <b> How to acknowledge AusPass: </b> When using AusPass data, please acknowledge AusPass and reference each array separately. Complete references are given on array webpages, accessible on our <a href="index.html" >homepage</a> and <a href="resources.html" >resources</a>. References and DOI information is also listed in the station XML metadata for each network (these tend to be more up to date). An example of appropriate acknowledgments is given in our <a href="about.html#acknowledgments">data policy</a>.  <br> </li>
+									
+                <li class="flow"> <b> Do you need help?</b> Visit our tutorials to explore the functionnality of our graphical interface (<a href="./help/graphical_explorer_basic.html">basic</a> and <a href="./help/graphical_explorer_advanced.html">advanced tutorials</a>). You can also learn how to access AusPass data with a standard FDSN request (<a href="./help/FDSN_request.html">generic request</a> and via an <a href="./help/obspy_request.html">ObsPy tutorial</a>). If you still need help, please, contact us at <a href="mailto:auspass@anu.edu.au">auspass@anu.edu.au</a>.</li>
+				
+				<li class="flow"> <b> We appreciate your feedback! </b> To help us improve AusPass, please <a href="contact.html">tell us</a> how you used our data. References to publications using AusPass are warmly welcomed.</li>
+
+<li class="flow"><b><p>We are happy to announce the webdc3 data portal is back online!</b> However we still encourage users to explore these alternative options:<br>
+1) Our <a href="http://auspass.edu.au:8080/fdsnws/">FDSN web server</a>. You can build <a href="http://auspass.edu.au:8080/fdsnws/dataselect/1/builder">waveform data</a> or <a href="http://auspass.edu.au:8080/fdsnws/station/1/builder">station/response metadata</a> queries easily (by hand or by script!) and download them in your browser or via wget/curl et al. </br>
+2) <a href="https://github.com/filefolder/pyweed">PyWeed</a>, a standalone GUI program from IRIS (win/osx/linux) <a href="https://vimeo.com/246357529">demo video</a>. NOTE: the version linked here has been hacked to be compatible with AusPass; later versions should hopefully include this AusPass compatibility by default.</br>
+3) An increasing variety of FDSN-compatible software and codes (e.g. <a href="http://www.obspy.org">ObsPy</a>, <a href="https://github.com/iris-edu/irisFetch-matlab">irisFetch-matlab</a>, or even a GIS plugin <a href="https://plugins.qgis.org/plugins/qquake/">QQuake</a>) 
+                
+            </ul>
+		</div>
+		<div class="clear h40"></div>
+ 		<iframe id="data_frame" style="width:100%; height:1400px;border: none" src="webinterface/index.html" scrolling="no"></iframe>
+    </div><!-- END of templatemo_main -->
+</div><!-- END of templatemo_wrapper --> 
+   
+   
+<div id="templatemo_bottom_wrapper">
+	<div id="templatemo_bottom"> 	
+		<p align="left" >Our sponsors:</p>
+		<img src="images/logos/ANU_and_AusPass_logos_v5.png" alt="Auscope and ANU logos">	 	
+    </div><!-- END of templatemo_bottom -->
+</div><!-- END of templatemo_bottom_wrapper -->  	
+	
+		
+<div id="templatemo_footer_wrapper">    
+    <div id="templatemo_footer">
+   	  <p align="center">Copyright © 2018 <a href="#">AusPass</a></p>
+  </div><!-- END of templatemo_footer -->
+</div><!-- END of templatemo_footer_wrapper -->
+</body>
+</html>
