@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AusMoho</title>
+<meta name="keywords" content="AusPass, seismic data, Australia, earthquake, seismic array, seismology, seismological data, passive seismic data" />
+<meta name="description" content="AusPass offers free access to seismic data acquired in Australia. Visit AusPass to find about earthquakes and discover the Earth structure beneath Australia!" />
+<link href="../templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/nivo-slider.css" type="text/css" media="screen" />	
+<link rel="stylesheet" type="text/css" href="../css/ddsmoothmenu.css" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/ddsmoothmenu.js">
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+</script>
+
+<script language="javascript" type="text/javascript">
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+<link rel="stylesheet" href="../css/slimbox2.css" type="text/css" media="screen" /> 
+<script type="text/JavaScript" src="../js/slimbox2.js"></script> 
+</head>
+<body>
+
+<div id="templatemo_wrapper">
+	<div id="templatemo_header">
+    	<div id="site_title"><a href="#">AusPass</a></div>
+    	    </div><!-- END of templatemo_header -->
+    <div id="templatemo_menu" class="ddsmoothmenu">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../data.html">Data</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../education.html">Education</a></li>
+			<li><a href="../resources.html">Resources</a></li>
+			<li><a href="../about.html">About us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+			<li><a href="../help.html">Help</a></li>
+        </ul>
+        <br style="clear: left" />
+    </div> <!-- end of templatemo_menu -->
+
+    <div id="templatemo_main">
+    
+
+		<h2>AusMoho</h2>
+		<div style="background: #ede8e8;padding: 10px 10px 10px 10px;">
+		    <b> How to acknowledge AusMoho results ? </b> 
+            <br> <br>
+            If you find the AusMoho results useful, please acknowledge AusPass and use the complete AusMoho reference, including the doi. An example of adequate acknowledgments can be found on our <a href="../about.html#acknowledgments">data policy</a> page. As most of AusPass products, the AusMoho dataset is under a <a href="../about.html#policy">CC BY 4.0 Attribution</a> license. For more information about AusMoho, please contact Prof. Brian Kennett at: <a href="mailto:Brian.Kennett@anu.edu.au">Brian.Kennett@anu.edu.au</a>.<br><br>
+			<u>Reference</u>: Brian Kennett (2019), AusMoho, Australian Passive Seismic Server (AusPass) and the Australian National University Data Commons. <br> <u>Doi</u>: <a href="https://dx.doi.org/10.25911/5cf751c17b3d4">10.25911/5cf751c17b3d4</a> 
+
+			</div>
+			
+	  	<div class="half left"><br>
+        <img src="G-Ausmoho-sta17.png" alt="Moho 2017" style="width:475px;height:441px;" /><!-- the width of the picture should be 475px, height can be adjusted to fit picture format.-->
+        <p>
+        Moho surface using data to end 2017, together with data points used in
+        construction.
+        </p>
+        </div>
+        <div class="half right">
+          <p><br> 
+          <br>
+          The Moho results are organised as simple ascii files with the following format:
+          <br>
+          <i>identifier |  latitude | longitude | Moho depth | weight</i>
+          <br>
+          <br>
+          The full suite of files (one per geophysical technique) is provided in a <b>.zip</b> file:
+          <br>
+          H-aitken.xyz - Gravity inversion at 0.5 deg spacing
+          <br>
+          H-refract.xyz - Refraction results on land
+          <br>
+          H-marine.xyz - Marine reflection/refraction results
+          <br>
+          H-reflect.xyz - Reflection profiling results
+          <br>
+          H-rtomo.xyz - Results from tomographic experiments
+          <br>
+          H-RecfA.xyz - Receiver functions - broadband inversions
+          <br>
+          H-RecfB.xyz - Receiver functions - HK results
+          <br>
+          H-RecfC.xyz - Receiver functions - higher frequency data 
+          <br>
+          H-ACcont.xyz - Autocorrelations - continuous data
+          <br>
+          H-ACteq.xyz - Autocorrelations - inversion of teleseismic data     
+          </p>
+          <a href="Moho-points19.zip" class="more">Access results</a>
+          <br>
+          <p>
+          <b><u>Coming soon</u></b>: Moho surface models
+          provided at 0.25 deg resolution, format:
+          <br>
+          <i>latitude | longitude | Moho depth</i>
+          <br>
+          <br>
+          (a)  Spline interpolation
+          <br>
+          (b)  Gaussian weighting
+          </p>
+          <a href="Models" class="more">Access Models</a>
+          
+</div>  
+		<div class="clear"></div>
+		
+	   <div style="background: #ede8e8;padding: 10px 10px 10px 10px;">
+		   The Moho depth is estimated from a combination of geophysical techniques, including but not limited to the analysis of passive seismic data archived at AusPass. The techniques and data sources used to build the AusMoho collection are listed below with relevant references. The collection is the most complete at this date (31 May 2019), and includes estimates that have not yet been integrated in the AUSREM model, released in 2012 (see Salmon et al., 2013 in compilations below). Please, also check recent updates on the <a href="http://rses.anu.edu.au/seismology/AuSREM/index.php">AusREM website</a>. 
+	   <br><br><b> References: </b> 
+	   <br>
+<i><b>Compilations:</b></i>
+<br>
+Kennett B.L.N., Salmon M., Saygin E. and AusMoho Working Group, (2011) 
+AusMoho: the variation of Moho depth in Australia. 
+Geophys. J. Int., 187, 946-958.
+<br>
+Salmon, M., Kennett, B.L.N., Stern, T. and Aitken, A.R.A., (2013) 
+The Moho in Australia and New Zealand, 
+Tectonophysics, 609, 288–298; 
+doi:10.1016/j.tecto.2012.07.009
+<br>
+Kennett, B.L.N., Chopping R. and Blewett, R., (2018) 
+<i>The Australian Continent: A Geophysical Synthesis</i>, ANU Press
+doi:10.22459/AC.08.2018
+<br>
+<i><b>Gravity Inversion:</b></i>
+<br>
+Aitken, A.R.A., Salmon, M.L. and Kennett, B.L.N. (2013) 
+Australia's Moho: A test of the usefulness of gravity modelling for the determination of Moho depth, 
+Tectonophysics, 609, 468–479;
+doi: 10.1016/j.tecto.2012.06.049
+<br>
+<i><b>Reflection:</b></i>
+<br>
+Kennett, B.L.N., Saygin, E., Fomin, T. and Blewett, R.S. (2016), 
+<i>Deep Crustal Seismic Reflection Profiling Australia 1978–2015</i>, ANU Press 
+doi:10.22459/dcsrp.11.2016
+<br>
+<i>Historical reflection:</i>
+<br>
+Dooley, J.C. and Moss, F.J., (1988).
+Deep crustal reflections in Australia 1957-1973 : II. Crustal models, 
+Geophys. J. R. Astr. Soc., 293, 239-249.
+<br>
+<i><b>Refraction:</b></i>
+<br>
+Collins, C.D.N., (1988)
+Seismic velocities in the crust and upper mantle of Australia,
+Bureau of Mineral Resources, Canberra, Report 277.
+<br>
+Collins, C.D.N., (1991)
+The nature of the crust-mantle boundary under Australia from seismic evidence, 
+in <i>The Australian Lithosphere</i>, edited by B.J. Drummond, 
+Spec. Publ., Geol. Soc. Aust., 17, 67-80.
+<br>
+<i><b>Receiver Functions:</b></i>
+<br>
+<i>Broadband inversions:</i>
+<br>
+Clitheroe, G., Gudmundsson, O. and Kennett, B.L.N., (2009)
+The crustal thickness of Australia,
+J. Geophys. Res., 105, 13,697-13,713.
+<br>
+Fontaine, F., Tkalčić, H., and Kennett, B.L.N., (2013) 
+Imaging crustal structure variation across southeastern Australia, 
+Tectonophysics, 582, 112–125; 
+doi: 10.1016/j.tecto.2012.09.031
+<br>
+Fontaine, F., Tkalčić, H. and Kennett, B., (2013) 
+Crustal complexity in the Lachlan Orogen revealed from teleseismic receiver functions, 
+Austral. J. Earth Sci, 60, 413–430;
+doi:10.180/08120099.2013.787646
+<br>
+Reading, A.M., Kennett, B.L.N. and Dentith, M.C., (2003)  
+The seismic structure of the Yilgarn Craton, Western Australia, 
+Austral. J. Earth Sci., 50, 427-438; 
+doi: 10.1046/j.1440-0952.2003.01000.x
+<br>
+Reading, A.M., and Kennett, B.L.N., (2003) 
+Lithospheric structure of the Pilbara Craton, Capricorn Orogen and northern Yilgarn Craton, 
+Western Australia, from teleseismic receiver functions,
+Austral. J. Earth Sci., 50, 439-445; 
+doi: 10.1046/j.1440-0952.2003.01003.x
+<br>
+Reading, A.M., Kennett, B.L.N., and Goleby, B., (2007) 
+New constraints on the seismic structure of West Australia: Evidence for terrane 
+stabilization prior to the assembly of an ancient continent?, 
+Geology, 35, 379-379; 
+doi: 10.1130/G23341A.1
+<br>
+Reading, A.M., Tkalčić, H., Kennett, B.L.N., Johnson, S.P., and Sheppard, S., (2012)
+Seismic structure of the crust and uppermost mantle of the Capricorn and 
+Paterson Orogens and adjacent cratons, Western Australia, from passive seismic experiments.
+Precambrian Res., 196, 295–308; 
+doi:10.1016/j.precamres.2011.07.001.
+<br>
+Saygin, E., (2007)
+<i>Seismic Receiver and Noise Correlation Based Studies in Australia></i>,
+Ph.D. Thesis, The Australian National University.
+<br>
+Shibutani, T., Sambridge, M., & Kennett, B., (1996)
+Genetic algorithm inversion for receiver functions with application to crust and 
+uppermost mantle structure beneath eastern Australia, 
+Geophys. Res. Lett., 23, 1829-1829;
+doi: 10.1029/96gl01671
+<br>
+<i>H-K stacking: </i>
+<br>
+Sippl, C., (2016) 
+Moho geometry along a north-south passive seismic transect through
+Central Australia. 
+Tectonophysics 676, 56–69.
+<br>
+Yuan H., (2015)
+Secular change in Archaean crust formation recorded in Western Australia
+Nature Geoscience 8 (10), 808-813.
+<br>
+<i>Higher frequencies</i>
+<br>
+Tkalčić, H., Rawlinson, N., Arroucau, P., Kumar, A. and Kennett, B.L.N. (2012) 
+Multistep modelling of receiver-based seismic and ambient noise data from WOMBAT array: 
+crustal structure beneath southeast Australia, 
+Geophys. J. Int., 189, 1681-1700; 
+doi: 10.1111/j.1365-246X.2012.05442.x
+<br>
+Sippl, C., Brisbout, L., Spaggiari, C.V., Gessner, K., Tkalčić, H., Kennett, B.L.N. and Murdie, R.,
+(2017) Crustal structure of a Proterozoic craton boundary: East Albany-Fraser Orogen, Western
+Australia, imaged with passive seismic and gravity anomaly data, Precambrian Res., 296, 78–92;
+doi:10.1016/j.precamres.2017.04.041
+<br>
+<i><b>Tomography:</b></i>
+<br>
+Lambeck, K., Burgess, G. and Shaw, R.D.,  (1988)
+Teleseismic travel-time anomalies and deep crustal structure in central Australia, 
+Geophys. J. R. Astr. Soc., 94,105-124
+<br>
+McQueen, H.W.S. and Lambeck, K., (1996)
+Determination of crustal structure in central Australia by inversion of traveltime residuals,
+Geophys. J. Int., 126, 645-662.
+<br>
+Rawlinson, N., Tkalčić, H. and Reading, A.M., (2010)
+Structure of the Tasmanian lithosphere from 3D seismic tomography, 
+Austral. J. Earth Sci., 57, 381-394.
+<br>
+<i><b>Autocorrelation:</b></i>
+<br>
+Gorbatov, A., Kennett, B.L.N. and Saygin, E., (2013) 
+Crustal properties from seismic station autocorrelograms, 
+Geophys. J. Int., 192, 861–870; 
+doi:10.1093/gji/ggs064
+<br>
+Kennett, B.L.N., Saygin, E. and Salmon, M., (2015) 
+Stacking autocorrelograms to map Moho depth
+with high spatial resolution in southeastern Australia, 
+Geophys. Res. Lett., 42, 3839–3846;
+doi:10.1002/2015GL065345
+<br>
+Kennett, B.L.N., and Sippl, C. (2018)
+Lithospheric discontinuities in central Australia, 
+Tectonophysics, 744, 10–22; 
+doi: 10.1016/j.tecto.2018.06.008
+<br>
+Qashqai, M.T., Saygin E., and Kennett B.L.N., (2019)
+Crustal Imaging with Bayesian Inversion of Teleseismic P‐wave Coda Autocorrelation
+Journal of Geophysical Research: Solid Earth, 124, 
+doi: 10.1029/2018JB017055
+<br>	   
+	   </div>
+
+		
+    </div><!-- END of templatemo_bottom -->    
+	</div><!-- END of templatemo_bottom_wrapper -->    
+   
+   
+<div id="templatemo_bottom_wrapper">
+	<div id="templatemo_bottom"> 	
+		<p align="left" >Our sponsors:</p>
+		<img src="../images/logos/ANU_and_AusPass_logos_v5.png" alt="Auscope and ANU logos">	 	
+    </div><!-- END of templatemo_bottom -->
+</div><!-- END of templatemo_bottom_wrapper -->  
+	
+		
+<div id="templatemo_footer_wrapper">    
+    <div id="templatemo_footer">
+   	  <p align="center">Copyright © 2018 <a href="#">AusPass</a></p>
+  </div><!-- END of templatemo_footer -->
+</div><!-- END of templatemo_footer_wrapper -->
+	
+</body>
+</html>

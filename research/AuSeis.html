@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AuSeis</title>
+<meta name="keywords" content="AusPass, seismic data, Australia, earthquake, seismic array, seismology, seismological data, passive seismic data" />
+<meta name="description" content="AusPass offers free access to seismic data acquired in Australia. Visit AusPass to find about earthquakes and discover the Earth structure beneath Australia!" />
+<link href="../templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/nivo-slider.css" type="text/css" media="screen" />	
+<link rel="stylesheet" type="text/css" href="../css/ddsmoothmenu.css" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/ddsmoothmenu.js">
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+</script>
+
+<script language="javascript" type="text/javascript">
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+<link rel="stylesheet" href="../css/slimbox2.css" type="text/css" media="screen" /> 
+<script type="text/JavaScript" src="../js/slimbox2.js"></script> 
+</head>
+<body>
+
+<div id="templatemo_wrapper">
+	<div id="templatemo_header">
+    	<div id="site_title"><a href="#">AusPass</a></div>
+    	    </div><!-- END of templatemo_header -->
+    <div id="templatemo_menu" class="ddsmoothmenu">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../data.html">Data</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../education.html">Education</a></li>
+			<li><a href="../resources.html">Resources</a></li>
+			<li><a href="../about.html">About us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+			<li><a href="../help.html">Help</a></li>
+        </ul>
+        <br style="clear: left" />
+    </div> <!-- end of templatemo_menu -->
+
+    <div id="templatemo_main">
+    
+
+		<h2>AuSeis: A seismic model from the inversion of teleseismic coda autocorrelation</h2>
+		<div style="background: #ede8e8;padding: 10px 10px 10px 10px;"><b> How to acknowledge AuSeis data ? </b> 
+			<br><br>If you find the AuSeis results useful, please acknowledge AusPass and use the complete AuSeis reference, including the doi. An example of adequate acknowledgments can be found on our <a href="../about.html#acknowledgments">data policy</a> page. The AuSeis product is under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Attribution-ShareAlike 4.0 International</a> (CC BY-SA 4.0) license. For more information about AuSeis, please contact Dr Mehdi Tork Qashqai at: <a href="mailto:Mehdi.Torkqashqai@csiro.au">Mehdi.Torkqashqai@csiro.au</a>.<br><br>
+			<u>Reference</u>: T. Qashqai, M., Saygin, E., and Kennett, B.L.N. (2019), Crustal Imaging with Bayesian Inversion of Teleseismic P‐wave Coda Autocorrelation, J. Geophys. Res. Solid Earth, 124, <a href="https://doi.org/10.1029/2018JB017055">https://doi.org/10.1029/2018JB017055</a></div>
+	  	<div class="half left"><br>
+        <img src="AuSeis.png" alt="A nice picture here" style="width:475px;height:475px;" /><!-- the width of the picture should be 475px, height can be adjusted to fit picture format.-->
+        <p><b>Topography of Australia (top) and the Moho surface estimated from the inversion (bottom) are visualised in a 3-D view.</b></p>
+		</div>
+        <div class="half right">
+          <p><br> <br>
+          AuSeis makes use of the teleseismic waveforms recorded on the vertical components of 1200 permanent and temporary seismic stations across Australia. It includes the first-order estimates of the crustal Vp, Vs, Vp/Vs, density and Moho depth. It has been obtained by inverting the autocorrelations of teleseismic P-wave coda through a Markov Chain Monte Carlo approach. For further details, please refer to the paper referenced above (<a href="https://doi.org/10.1029/2018JB017055">https://doi.org/10.1029/2018JB017055</a>).</p>
+          <a href="AuSeis_Model.zip" class="more">Access data</a>
+			<p><br><b>Description of the dataset:</b>
+			The results of the inversion are provided as ASCII files (.dat and .xyz files). The zip file containing the results includes the following: 
+		  <ol>
+			<li><b>“Best_2000_Models”</b> includes the best 2000 accepted 1-D models for each seismic station.  The models give the thickness, depth, Vp, Vs and Vp/Vs of each crustal layer. For each station, the best 2000 accepted horizontal slowness value (s/km) are also given in the last column of each file. This parameter can be particularly useful to create synthetic seismograms associated with each of the models provided in the files.</li>
+			<li><b>“1-D Models”</b> includes the average of 1-D crustal properties (Vp, Vs, density, depth, Vp/Vs, and Moho) and their associated one sigma uncertainty for each seismic station. The mean and one sigma uncertainty for each of the crustal properties are calculated from the best 2000 accepted models.</li>
+			<li><b>“AuSeis_Crustal_Model”</b> includes an ASCII grid file (“AuSeis_Crustal_Model.xyz”). The file includes grids of seismic crustal properties (Vp, Vs, Vp/Vs, density) and their related one sigma uncertainties. The grid interval in the x and y directions is 0.5 degree, and the depth interval is 5 km. More information about the columns are provided in the file at the top of the file.</li>
+			<li> <b>“AuSeis_Moho”</b> includes a file (“AuSeis_Moho_From_1D_Models.dat”) containing Moho depths and their one sigma uncertainty.</li>
+			<li> <b>“Stations_Used.dat”</b> is a list of all stations used in this study. The file is organised with the following format: name of the seismic station, name of the seismic network, longitude (degree), and latitude (degree).</li></ol>
+			</p>
+</div>  
+		<div class="clear"></div>
+		
+    </div><!-- END of templatemo_bottom -->    
+	</div><!-- END of templatemo_bottom_wrapper -->    
+   
+   
+<div id="templatemo_bottom_wrapper">
+	<div id="templatemo_bottom"> 	
+		<p align="left" >Our sponsors:</p>
+		<img src="../images/logos/ANU_and_AusPass_logos_v5.png" alt="Auscope and ANU logos">	 	
+    </div><!-- END of templatemo_bottom -->
+</div><!-- END of templatemo_bottom_wrapper -->  
+	
+		
+<div id="templatemo_footer_wrapper">    
+    <div id="templatemo_footer">
+   	  <p align="center">Copyright © 2018 <a href="#">AusPass</a></p>
+  </div><!-- END of templatemo_footer -->
+</div><!-- END of templatemo_footer_wrapper -->
+	
+</body>
+</html>
