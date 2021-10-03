@@ -1,195 +1,103 @@
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #888888">#!/usr/bin/python3</span>
+<html>
+<body>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<pre class="prettyprint">
+#!/usr/bin/python3
 
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">os</span>
-<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">obspy</span> <span style="color: #008800; font-weight: bold">import</span> Stream,UTCDateTime,read_events,read_inventory
-<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">obspy.clients.fdsn</span> <span style="color: #008800; font-weight: bold">import</span> Client
-<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">obspy.geodetics.base</span> <span style="color: #008800; font-weight: bold">import</span> locations2degrees
-<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">obspy.taup</span> <span style="color: #008800; font-weight: bold">import</span> TauPyModel
+import os
+from obspy import Stream,UTCDateTime,read_events,read_inventory
+from obspy.clients.fdsn import Client
+from obspy.geodetics.base import locations2degrees
+from obspy.taup import TauPyModel
 
-model <span style="color: #333333">=</span> TauPyModel(model<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;iasp91&quot;</span>) <span style="color: #888888">#1D velocity model to predict arrivals, list of all options here: https://docs.obspy.org/packages/obspy.taup.html</span>
+model = TauPyModel(model="iasp91") #1D velocity model to predict arrivals, list of all options here: https://docs.obspy.org/packages/obspy.taup.html
 
-auspass <span style="color: #333333">=</span> Client(<span style="background-color: #fff0f0">&#39;http://auspass.edu.au:80&#39;</span>) <span style="color: #888888">#establish our connection to AusPass FDSN server</span>
+auspass = Client('http://auspass.edu.au:80') #establish our connection to AusPass FDSN server
 
 
-<span style="color: #888888">################################## enter parameters here</span>
-starttime<span style="color: #333333">=</span>UTCDateTime(<span style="color: #0000DD; font-weight: bold">2016</span>,<span style="color: #0000DD; font-weight: bold">11</span>,<span style="color: #0000DD; font-weight: bold">9</span>)
-endtime<span style="color: #333333">=</span>UTCDateTime(<span style="color: #0000DD; font-weight: bold">2016</span>,<span style="color: #0000DD; font-weight: bold">11</span>,<span style="color: #0000DD; font-weight: bold">15</span>)
+################################## enter parameters here
+starttime=UTCDateTime(2016,11,9)
+endtime=UTCDateTime(2016,11,15)
 
-minmag<span style="color: #333333">=</span><span style="color: #6600EE; font-weight: bold">6.5</span>
-maxmag<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">10</span>
+minmag=6.5
+maxmag=10
 
-mindist <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">30</span> <span style="color: #888888">#degrees</span>
-maxdist <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">90</span>
+mindist = 30 #degrees
+maxdist = 90
 
-network<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;1Q&#39;</span>
-station<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;AQTG*&#39;</span>
-location<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;*&#39;</span>
-channel<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;*Z&#39;</span>
+network='1Q'
+station='AQTG*'
+location='*'
+channel='*Z'
 
-time_before_p <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">60</span> <span style="color: #888888">#seconds of data to download before predicted p arrival</span>
-time_after_p  <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">120</span>
+time_before_p = 60 #seconds of data to download before predicted p arrival
+time_after_p  = 120
 
-<span style="color: #888888">###################################</span>
+###################################
 
-<span style="color: #888888">#STEP 1 &gt; get station metadata from auspass (make sure to delete old file if changing parameters!)</span>
-<span style="color: #008800; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">not</span> os<span style="color: #333333">.</span>path<span style="color: #333333">.</span>exists(<span style="background-color: #fff0f0">&#39;</span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">.xml&#39;</span> <span style="color: #333333">%</span> network):
-	<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;downloading stationXML inventory...&quot;</span>)
-	inventory <span style="color: #333333">=</span> auspass<span style="color: #333333">.</span>get_stations(network<span style="color: #333333">=</span>network,station<span style="color: #333333">=</span>station,level<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;response&#39;</span>,channel<span style="color: #333333">=</span>channel,starttime<span style="color: #333333">=</span>starttime,endtime<span style="color: #333333">=</span>endtime)
-	inventory<span style="color: #333333">.</span>write(<span style="background-color: #fff0f0">&#39;</span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">.xml&#39;</span> <span style="color: #333333">%</span> network,format<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;STATIONXML&#39;</span>)
-<span style="color: #008800; font-weight: bold">else</span>:
-	<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;loading pre-existing stationXML file </span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">.xml&quot;</span> <span style="color: #333333">%</span> network)
-	inventory <span style="color: #333333">=</span> read_inventory(<span style="background-color: #fff0f0">&#39;</span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">.xml&#39;</span> <span style="color: #333333">%</span> network)
+#STEP 1 > get station metadata from auspass (make sure to delete old file if changing parameters!)
+if not os.path.exists('%s.xml' % network):
+	print("downloading stationXML inventory...")
+	inventory = auspass.get_stations(network=network,station=station,level='response',channel=channel,starttime=starttime,endtime=endtime)
+	inventory.write('%s.xml' % network,format='STATIONXML')
+else:
+	print("loading pre-existing stationXML file %s.xml" % network)
+	inventory = read_inventory('%s.xml' % network)
 
 
-<span style="color: #888888">#STEP 2 &gt; get an events catalog within the required magnitude and time limits, and save as a QuakeML file (make sure to delete old file if changing parameters!)</span>
-<span style="color: #008800; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">not</span> os<span style="color: #333333">.</span>path<span style="color: #333333">.</span>exists(<span style="background-color: #fff0f0">&#39;events.</span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">.qml&#39;</span> <span style="color: #333333">%</span> network):
-	<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;downloading events...&quot;</span>)
-	eventserver <span style="color: #333333">=</span> Client(<span style="background-color: #fff0f0">&#39;ISC&#39;</span>) <span style="color: #888888"># shortcut to http://www.isc.ac.uk/iscbulletin/search/catalogue/. other options are &#39;IRIS&#39;, &#39;USGS&#39; etc</span>
-	catalog <span style="color: #333333">=</span> eventserver<span style="color: #333333">.</span>get_events(minmagnitude<span style="color: #333333">=</span>minmag, maxmagnitude<span style="color: #333333">=</span>maxmag,starttime<span style="color: #333333">=</span>starttime,endtime<span style="color: #333333">=</span>endtime)
-	catalog<span style="color: #333333">.</span>write(<span style="background-color: #fff0f0">&#39;events.</span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">.qml&#39;</span> <span style="color: #333333">%</span> network,format<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;QUAKEML&#39;</span>); <span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&#39;events.</span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">.qml written&#39;</span> <span style="color: #333333">%</span> network)
-<span style="color: #008800; font-weight: bold">else</span>:
-	<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;loading pre-existing qml file events.</span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">.qml&quot;</span> <span style="color: #333333">%</span> network)
-	catalog <span style="color: #333333">=</span> read_events(<span style="background-color: #fff0f0">&#39;events.</span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">.qml&#39;</span> <span style="color: #333333">%</span> network)
+#STEP 2 > get an events catalog within the required magnitude and time limits, and save as a QuakeML file (make sure to delete old file if changing parameters!)
+if not os.path.exists('events.%s.qml' % network):
+	print("downloading events...")
+	eventserver = Client('ISC') # shortcut to http://www.isc.ac.uk/iscbulletin/search/catalogue/. other options are 'IRIS', 'USGS' etc
+	catalog = eventserver.get_events(minmagnitude=minmag, maxmagnitude=maxmag,starttime=starttime,endtime=endtime)
+	catalog.write('events.%s.qml' % network,format='QUAKEML'); print('events.%s.qml written' % network)
+else:
+	print("loading pre-existing qml file events.%s.qml" % network)
+	catalog = read_events('events.%s.qml' % network)
 
-<span style="color: #008800; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">not</span> catalog: <span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;no events found! exiting&quot;</span>); <span style="color: #008800; font-weight: bold">raise</span> <span style="color: #FF0000; font-weight: bold">SystemExit</span>
+if not catalog: print("no events found! exiting"); raise SystemExit
 
-<span style="color: #888888">#STEP 3 &gt; iterate through each station / network in inventory, </span>
-<span style="color: #888888">#  then iterate through each eq in catalog, testing if they&#39;re with the desired distance range</span>
-<span style="color: #888888">#    Then calculate the predicted p-arrival time at the station from each event</span>
-<span style="color: #888888">#       THEN download the waveform data within the desired window around this predicted arrival  </span>
+#STEP 3 > iterate through each station / network in inventory, 
+#  then iterate through each eq in catalog, testing if they're with the desired distance range
+#    Then calculate the predicted p-arrival time at the station from each event
+#       THEN download the waveform data within the desired window around this predicted arrival  
 
-<span style="color: #008800; font-weight: bold">for</span> net <span style="color: #000000; font-weight: bold">in</span> inventory:
-	<span style="color: #008800; font-weight: bold">for</span> eq <span style="color: #000000; font-weight: bold">in</span> catalog:
-		eq_lat,eq_lon,eq_time <span style="color: #333333">=</span> eq<span style="color: #333333">.</span>origins[<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">.</span>latitude, eq<span style="color: #333333">.</span>origins[<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">.</span>longitude, eq<span style="color: #333333">.</span>origins[<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">.</span>time
-		<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;finding data in network </span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0"> for event at </span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0"> </span><span style="background-color: #eeeeee">%.4f</span><span style="background-color: #fff0f0"> lat </span><span style="background-color: #eeeeee">%.4f</span><span style="background-color: #fff0f0"> long &quot;</span> <span style="color: #333333">%</span> (network,eq<span style="color: #333333">.</span>origins[<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">.</span>time,eq<span style="color: #333333">.</span>origins[<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">.</span>latitude, eq<span style="color: #333333">.</span>origins[<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">.</span>longitude))
+for net in inventory:
+	for eq in catalog:
+		eq_lat,eq_lon,eq_time = eq.origins[0].latitude, eq.origins[0].longitude, eq.origins[0].time
+		print("finding data in network %s for event at %s %.4f lat %.4f long " % (network,eq.origins[0].time,eq.origins[0].latitude, eq.origins[0].longitude))
 
-		output_stream <span style="color: #333333">=</span> Stream() <span style="color: #888888">#we&#39;re going to write files per EVENT that include all stations. so place this within event loop, but outside of station (sta) loop</span>
+		output_stream = Stream() #we're going to write files per EVENT that include all stations. so place this within event loop, but outside of station (sta) loop
 		
-		<span style="color: #008800; font-weight: bold">for</span> sta <span style="color: #000000; font-weight: bold">in</span> net:	
-			lat,lon <span style="color: #333333">=</span> sta<span style="color: #333333">.</span>latitude,sta<span style="color: #333333">.</span>longitude
-			dist_station_to_eq <span style="color: #333333">=</span> locations2degrees(lat,lon,eq_lat,eq_lon)
+		for sta in net:	
+			lat,lon = sta.latitude,sta.longitude
+			dist_station_to_eq = locations2degrees(lat,lon,eq_lat,eq_lon)
 
-			<span style="color: #008800; font-weight: bold">if</span> mindist <span style="color: #333333">&lt;=</span> dist_station_to_eq <span style="color: #333333">&lt;=</span> maxdist:
-				<span style="color: #888888">#calculate theoretical p arrival</span>
-				arrivals <span style="color: #333333">=</span> model<span style="color: #333333">.</span>get_travel_times(source_depth_in_km<span style="color: #333333">=</span>eq<span style="color: #333333">.</span>origins[<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">.</span>depth<span style="color: #333333">/</span><span style="color: #0000DD; font-weight: bold">1000</span>,distance_in_degree<span style="color: #333333">=</span>dist_station_to_eq,phase_list<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;P&#39;</span>)
-				p_duration <span style="color: #333333">=</span> arrivals[<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">.</span>time <span style="color: #888888">#seconds it takes for p-wave to reach station</span>
-				<span style="color: #888888">#so, estimated time p-wave arrival time at station is the eq origin time + the time it takes for the wave to travel to station </span>
-				p_arrival_time <span style="color: #333333">=</span> eq<span style="color: #333333">.</span>origins[<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">.</span>time <span style="color: #333333">+</span> p_duration
+			if mindist <= dist_station_to_eq <= maxdist:
+				#calculate theoretical p arrival
+				arrivals = model.get_travel_times(source_depth_in_km=eq.origins[0].depth/1000,distance_in_degree=dist_station_to_eq,phase_list='P')
+				p_duration = arrivals[0].time #seconds it takes for p-wave to reach station
+				#so, estimated time p-wave arrival time at station is the eq origin time + the time it takes for the wave to travel to station 
+				p_arrival_time = eq.origins[0].time + p_duration
 
-				<span style="color: #888888">#now that we know when the p-wave should arrive, we can download a window of data around it and add it to our output stream</span>
-				<span style="color: #888888">#we will try/except this in case the request returns no data (or some other error occurs!)</span>
-				<span style="color: #008800; font-weight: bold">try</span>:
-					st <span style="color: #333333">=</span> auspass<span style="color: #333333">.</span>get_waveforms(network<span style="color: #333333">=</span>net<span style="color: #333333">.</span>code,station<span style="color: #333333">=</span>sta<span style="color: #333333">.</span>code,location<span style="color: #333333">=</span>location,channel<span style="color: #333333">=</span>channel,
-						                       starttime<span style="color: #333333">=</span>p_arrival_time<span style="color: #333333">-</span>time_before_p,endtime<span style="color: #333333">=</span>p_arrival_time<span style="color: #333333">+</span>time_after_p)
-					output_stream <span style="color: #333333">+=</span> st <span style="color: #888888">#add to our output!</span>
-				<span style="color: #008800; font-weight: bold">except</span>:
-					<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;no data for </span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">.</span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">.</span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">.</span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0"> between </span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">-</span><span style="background-color: #eeeeee">%s</span><span style="background-color: #fff0f0">...skipping&quot;</span> <span style="color: #333333">%</span> (net<span style="color: #333333">.</span>code,sta<span style="color: #333333">.</span>code,location,channel,p_arrival_time<span style="color: #333333">-</span>time_before_p,p_arrival_time<span style="color: #333333">+</span>time_after_p))
-					<span style="color: #008800; font-weight: bold">continue</span>
+				#now that we know when the p-wave should arrive, we can download a window of data around it and add it to our output stream
+				#we will try/except this in case the request returns no data (or some other error occurs!)
+				try:
+					st = auspass.get_waveforms(network=net.code,station=sta.code,location=location,channel=channel,
+						                       starttime=p_arrival_time-time_before_p,endtime=p_arrival_time+time_after_p)
+					output_stream += st #add to our output!
+				except:
+					print("no data for %s.%s.%s.%s between %s-%s...skipping" % (net.code,sta.code,location,channel,p_arrival_time-time_before_p,p_arrival_time+time_after_p))
+					continue
 				
-		<span style="color: #888888">#At this point we can write out our collected data PER EVENT. you could also produce a file per station per event, or combine all data in to one (etc), with the proper edits</span>
-		<span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">len</span>(output_stream) <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span>: 
-			<span style="color: #888888">#if you&#39;d like to remove the response before writing, it&#39;s as easy as: </span>
-			output_stream<span style="color: #333333">.</span>remove_response(inventory)
+		#At this point we can write out our collected data PER EVENT. you could also produce a file per station per event, or combine all data in to one (etc), with the proper edits
+		if len(output_stream) > 0: 
+			#if you'd like to remove the response before writing, it's as easy as: 
+			output_stream.remove_response(inventory)
 
-			output_stream<span style="color: #333333">.</span>write(<span style="background-color: #fff0f0">&quot;</span><span style="background-color: #eeeeee">%.4d</span><span style="background-color: #fff0f0">.</span><span style="background-color: #eeeeee">%.2d</span><span style="background-color: #fff0f0">.</span><span style="background-color: #eeeeee">%.2d</span><span style="background-color: #fff0f0">.</span><span style="background-color: #eeeeee">%.2d</span><span style="background-color: #fff0f0">.</span><span style="background-color: #eeeeee">%.2d</span><span style="background-color: #fff0f0">.</span><span style="background-color: #eeeeee">%.2d</span><span style="background-color: #fff0f0">.ms&quot;</span> <span style="color: #333333">%</span> (eq_time<span style="color: #333333">.</span>year,eq_time<span style="color: #333333">.</span>month,eq_time<span style="color: #333333">.</span>day, \
-															eq_time<span style="color: #333333">.</span>hour,eq_time<span style="color: #333333">.</span>minute,eq_time<span style="color: #333333">.</span>second),format<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;MSEED&#39;</span>) <span style="color: #888888">#could also write as SAC files, or many other formats... </span>
-			<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;wrote </span><span style="background-color: #eeeeee">%.4d</span><span style="background-color: #fff0f0">.</span><span style="background-color: #eeeeee">%.2d</span><span style="background-color: #fff0f0">.</span><span style="background-color: #eeeeee">%.2d</span><span style="background-color: #fff0f0">.</span><span style="background-color: #eeeeee">%.2d</span><span style="background-color: #fff0f0">.</span><span style="background-color: #eeeeee">%.2d</span><span style="background-color: #fff0f0">.</span><span style="background-color: #eeeeee">%.2d</span><span style="background-color: #fff0f0">.ms&quot;</span> <span style="color: #333333">%</span> (eq_time<span style="color: #333333">.</span>year,eq_time<span style="color: #333333">.</span>month,eq_time<span style="color: #333333">.</span>day, \
-															eq_time<span style="color: #333333">.</span>hour,eq_time<span style="color: #333333">.</span>minute,eq_time<span style="color: #333333">.</span>second))
-</pre></td></tr></table></div>
+			output_stream.write("%.4d.%.2d.%.2d.%.2d.%.2d.%.2d.ms" % (eq_time.year,eq_time.month,eq_time.day, \
+															eq_time.hour,eq_time.minute,eq_time.second),format='MSEED') #could also write as SAC files, or many other formats... 
+			print("wrote %.4d.%.2d.%.2d.%.2d.%.2d.%.2d.ms" % (eq_time.year,eq_time.month,eq_time.day, \
+															eq_time.hour,eq_time.minute,eq_time.second))
 
+</pre></body></html>

@@ -32,6 +32,7 @@ function clearText(field)
     if (field.defaultValue == field.value) field.value = '';
     else if (field.value == '') field.value = field.defaultValue;
 }
+
 </script>
 
 <link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" /> 
@@ -56,26 +57,31 @@ function clearText(field)
             <li><a href="../data.html"> Data</a></li>
             <li><a href="../research.html">Research</a></li>
             <li><a href="../education.html">Education</a></li>
-			<li><a href="../resources.html">Resources</a></li>
-			<li><a href="../about.html" >About us</a></li>
+            <li><a href="../resources.html">Resources</a></li>
+	    <li><a href="../about.html" >About us</a></li>
             <li><a href="../contact.html">Contact</a></li>
-			<li><a href="../help.html">Help</a></li>
+	    <li><a href="../help.html">Help</a></li>
         </ul>
         <br style="clear: left" />
     </div> <!-- end of templatemo_menu -->
     
-    <div id="templatemo_main">
+    <!-- <div id="templatemo_main"> -->
 		<br>
 		<h2> Access AusPass data with ObsPy</h2>
 		<br>		 		 	
 		 These (growing list of) examples show how to access and manipulate AusPass data through <a href="http://www.fdsn.org/">FDSN</a> standards with the python module <a href="https://docs.obspy.org/">ObsPy</a>. It is by no means complete. Fortunately the ObsPy documentation is EXCELLENT and should be bookmarked. <br>
 		 Fundamentally the <a href="https://docs.obspy.org/packages/obspy.clients.fdsn.html">obspy.clients.fdsn</a> package contains a client to access web servers that implement the <a href="http://www.fdsn.org/webservices/">FDSN web service definitions</a>. Once the connection to AusPass has been made with <b>http://auspass.edu.au:80</b>, all functions of <a href="https://docs.obspy.org/packages/obspy.clients.fdsn.html">obspy.clients.fdsn</a> can be used to download metadata (e.g. <a href="https://docs.obspy.org/packages/autogen/obspy.clients.fdsn.client.Client.get_stations.html">get_stations</a>) and seismic data (e.g. <a href="https://docs.obspy.org/packages/autogen/obspy.clients.fdsn.client.Client.get_waveforms.html">get_waveforms</a>).<br><br>
-		
-		<iframe id="tuto_frame1" style="width:100%;height:5000px;border: none" src="./python_script1.html" scrolling="yes"></iframe>
+
+		<div id="templatemo_free">
+		<iframe id="tuto_frame1" style="width:1400px; height:905px; border: none; margin-left:-220px;position:relative;" src="./python_script1.html" scrolling="yes"></iframe>
 		<br><br><br>Here is a secondary script to download and plot arrival data from a Mw6.9 event in PNG on March 29 2018
-		<iframe id="tuto_frame2" style="width:100%; height:3280px;border: none" src="./python_script2.html" scrolling="yes"></iframe>
-		<br><br>Here's a general script to download events and arrivals based on a few search parameters
-		<embed type="text/html" src="./python_script3.html" height=2000px width=100%>
+		<iframe id="tuto_frame2" style="width:1400px; height:905px; border: none; margin-left:-220px;position:relative;" scrolling="yes"></iframe>
+		<br><br><br>Here's a script to download events and arrivals based on a few search parameters
+		<embed type="text/html" src="./python_script3.html" style="width:1400px; height:1700px; border: none; margin-left:-220px;position:relative;">
+		<br><br><br>Here's a script to calculate a magnitude of an earthquake (in Australia!) given a time & location
+		<embed type="text/html" src="./python_script4.html" style="width:1400px; height:1800px; border: none; margin-left:-220px;position:relative;">
+		</div>
+
 <div class="clear h40"></div>
 
 </div><!-- END of templatemo_bottom -->
@@ -87,7 +93,7 @@ function clearText(field)
 	<div id="templatemo_bottom"> 	
 		<p align="left" >Our sponsors:</p>
 		<img alt="AuScope and ANU logos" src="../images/logos/ANU_and_AusPass_logos_v5.png">	 	
-    </div><!-- END of templatemo_bottom -->
+        </div><!-- END of templatemo_bottom -->
 </div><!-- END of templatemo_bottom_wrapper -->  	
 	
 	
@@ -95,7 +101,7 @@ function clearText(field)
 <div id="templatemo_footer_wrapper">    
     <div id="templatemo_footer">
    	  <p align="center">Copyright © 2018 <a href="#">AusPass</a></p>
-  </div><!-- END of templatemo_footer -->
+    </div><!-- END of templatemo_footer -->
 </div><!-- END of templatemo_footer_wrapper -->
 
 </body>
